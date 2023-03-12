@@ -1,13 +1,12 @@
 {
     "name": "preemstudio/laravel-identicon",
     "description": "A package to easily generate Identicons with Laravel.",
+    "license": "MIT",
     "keywords": [
         "PreemStudio",
         "laravel",
         "laravel-identicon"
     ],
-    "homepage": "https://github.com/preemstudio/laravel-identicon",
-    "license": "MIT",
     "authors": [
         {
             "name": "Brian Faust",
@@ -15,6 +14,7 @@
             "role": "Developer"
         }
     ],
+    "homepage": "https://github.com/preemstudio/laravel-identicon",
     "require": {
         "php": "^8.2",
         "illuminate/contracts": "^10.0",
@@ -36,6 +36,8 @@
         "phpstan/phpstan-phpunit": "^1.3",
         "spatie/laravel-ray": "^1.32"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "PreemStudio\\Identicon\\": "src"
@@ -46,20 +48,13 @@
             "Tests\\": "tests"
         }
     },
-    "scripts": {
-        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
-        "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
-        "format": "vendor/bin/pint --config vendor/preemstudio/laravel-jetpack/pint.json"
-    },
     "config": {
-        "sort-packages": true,
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "phpstan/extension-installer": true,
             "ergebnis/composer-normalize": true
-        }
+        },
+        "sort-packages": true
     },
     "extra": {
         "laravel": {
@@ -68,6 +63,11 @@
             ]
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "format": "vendor/bin/pint --config vendor/preemstudio/laravel-jetpack/pint.json",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    }
 }
