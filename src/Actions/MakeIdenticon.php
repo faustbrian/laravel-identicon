@@ -6,7 +6,7 @@ namespace PreemStudio\Identicon\Actions;
 
 use Identicon\Identicon;
 
-class MakeIdenticon
+final class MakeIdenticon
 {
     public static function execute(string $value): string
     {
