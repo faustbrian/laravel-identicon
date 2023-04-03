@@ -10,7 +10,7 @@ final class MakeIdenticon
 {
     public static function execute(string $value): string
     {
-        $generator = config('laravel-identicon.generator');
+        $generator = config('identicon.generator');
 
         $identicon = new Identicon(new $generator);
 
