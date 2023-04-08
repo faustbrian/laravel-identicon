@@ -12,7 +12,7 @@ final class MakeIdenticon
     {
         $generator = config('identicon.generator');
 
-        $identicon = new Identicon(new $generator);
+        $identicon = new Identicon(new $generator());
 
         return $identicon->getImageDataUri($value);
     }

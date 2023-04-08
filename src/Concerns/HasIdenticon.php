@@ -10,20 +10,20 @@ trait HasIdenticon
 {
     public array $identicon = [
         'from' => 'email',
-        'to'   => 'avatar',
+        'to' => 'avatar',
     ];
 
     public static function bootHasIdenticon(): void
     {
-        static::creating(function ($model) {
-            $identicon                        = MakeIdenticon::execute($model->{$model->identicon['from']});
+        static::creating(function ($model): void {
+            $identicon = MakeIdenticon::execute($model->{$model->identicon['from']});
             $model->{$model->identicon['to']} = $identicon;
         });
     }
 
     public function generateIdenticon(): void
     {
-        $identicon                      = MakeIdenticon::execute($this->{$this->identicon['from']});
+        $identicon = MakeIdenticon::execute($this->{$this->identicon['from']});
         $this->{$this->identicon['to']} = $identicon;
         $this->save();
     }
