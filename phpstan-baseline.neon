@@ -1,0 +1,6 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Parameter \\#1 \\$generator of class Identicon\\\\Identicon constructor expects Identicon\\\\Generator\\\\GeneratorInterface\\|null, object given\\.$#"
+			count: 1
+			path: src/Actions/MakeIdenticon.php
