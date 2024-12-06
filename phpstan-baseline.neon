@@ -1,0 +1,16 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Cannot call method in\\(\\) on iterable\\<SplFileInfo\\>\\.$#"
+			count: 1
+			path: .php-cs-fixer.php
+
+		-
+			message: "#^Parameter \\#1 \\$generator of class Identicon\\\\Identicon constructor expects Identicon\\\\Generator\\\\GeneratorInterface\\|null, object given\\.$#"
+			count: 1
+			path: src/Actions/MakeIdenticon.php
+
+		-
+			message: "#^Undefined variable\\: \\$this$#"
+			count: 1
+			path: tests/Pest.php
